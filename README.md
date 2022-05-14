@@ -68,3 +68,103 @@ To create a basic Bonds UI for your chain, run:
 To push to a newly created GitHub repository, inside conjugate-pors, run:
 
     $ git remote add origin git@github.com:myusername/myprojectname && git push -u origin master
+
+### Command line arguments
+
+	--chain local
+	--chain dev
+	--chain fir
+	
+	--validator
+	--node-key
+	--base-path
+	--port
+	--bootnodes multiaddr
+	--telemetry-url url
+	--name Silver
+	--ws-port 9944
+	--rpc-port 9933
+	--ws-external
+	--rpc-external
+	--rpc-cors all
+	--pruning mode
+	--force-authoring
+	--execution native
+	--log trace
+	--log sync,afg=trace
+	--keystore-path
+	
+	purge-chain
+	--chain <chain name or path>
+	build-spec
+	--chain <chain name or path>
+	--raw
+
+### Substrate Architecture
+
+![](images/architecture.jpeg)
+
+- BABE/Grandpa hybrid consensus mechanism
+- p2p connection and broadcasting system
+- Universal transaction pool
+- Metadata original data system
+- SRML (Substrate Runtime Module Library)
+
+#### Runtime
+
+- Definition of data structures
+	- Block Header
+	- Block block
+	- Extrinsic external messages
+		- Transaction User transaction (user needs to sign)
+		- Inherent inherent message (user does not need to sign)
+
+- API interface of Runtime
+	- version
+	- execute_block
+	- initilize_block
+	- metadata
+	- apply_extrinsic
+	- finalize_block
+	- inherent_extrinsics
+	- check_inherents
+	- random_seed
+	- validate_transaction
+	- offchain_worker
+	- authorities
+	- sign
+	-verify
+
+- SRML
+ 	- Core module
+ 		- Executive
+ 		- System
+ 	- Consensus mechanism
+ 		-Babe
+ 		- Authorship
+ 		- Finality Tracker
+ 		- Grandpa
+ 		- Session
+ 		-Offences
+
+ - Autonomous management
+		- Council
+		- Democracy
+		-sudo
+		- Treasury
+
+- time
+		- Timestamp
+
+- Fund account management
+		-Indicies
+		-Balances
+		- GenericAsset
+		- Staking
+	
+- Smart contracts
+		- Contracts
+
+- Auxiliary
+		-Supoort
+		- Metadata
