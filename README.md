@@ -8,3 +8,18 @@ The current blockchain technology, the issued Token, is developed on the belief 
 - Proof of Resources utilize PC Resources(CPU Core, Hard disk, Ram)
 - Decentralized Virtual Machine
 - To supporting smart contracts is a huge innovation.
+
+#### Learning resources
+
+- mining software: https://github.com/PoC-Consortium/scavenger
+- P disk tool: https://github.com/PoC-Consortium/engraver
+- Mining documentation for PoC: https://burstwiki.org/en/mining/
+
+The Mining Mode of PORS, such as generating a block every minute, rewards native tokens, can issue new tokens through smart contracts, accounts can mortgage multiple tokens, and then the reward can be multiple tokens. To issue a new token with a smart contract, a certain percentage of tokens need to be locked. For example, the amount to be locked is 10% of the original tokens that have been issued. The lock-up period is 2 years, which can be gradually released, and all released within 2 years. 
+
+### Parameters required to issue new tokens:
+
+- Token symbol
+- Initial block reward amount T
+- The number of collateral tokens per T M
+- The number of blocks per halving (that is, the halving cycle) P
