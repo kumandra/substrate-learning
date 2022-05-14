@@ -22,4 +22,49 @@ The Mining Mode of PORS, such as generating a block every minute, rewards native
 - Token symbol
 - Initial block reward amount T
 - The number of collateral tokens per T M
-- The number of blocks per halving (that is, the halving cycle) P
+- The number of blocks per halving (that is, the halving cycle) 
+
+### Design of reward rules:
+- todo!
+
+### Governance design:
+- todo!
+
+### Create new project
+
+	curl https://raw.githubusercontent.com/paritytech/substrate-up/4f3d476d2271a1cae6014a22255d0c7aa85692e7/substrate-node-new -sSf | sh -s conjugate-pors Kumandra
+
+Create a network of multiple nodes:
+
+	cargo run --release -- \
+	--base-path data/node1 \
+	--chain=local \
+	--alice \
+	--node0-key 0000000000000000000000000000000000000000000000000000001 \
+	--telemetry-url ws://telemetry.polkadot.io:1024 \
+	--validator
+	
+Create a second node network:
+
+	cargo run --release -- \
+	--base-path data/node2 \
+	--bootnodes /ip4/127.0.0.1/tcp/30333/p2p/QmaMHd82KFsVV4d9tNsACmdBfzuFoKw1fBtA9XFaBeuKY5 \
+	--chain=local \
+	--bob \
+	--port 30334 \
+	--telemetry-url ws://telemetry.polkadot.io:1024 \
+	--validator
+	
+Chain client created in conjugate-pors.
+
+To start a dev chain, run:
+
+    $ conjugate-pors/target/release/conjugate-pors --dev
+
+To create a basic Bonds UI for your chain, run:
+
+    $ substrate-ui-new conjugate-pors
+
+To push to a newly created GitHub repository, inside conjugate-pors, run:
+
+    $ git remote add origin git@github.com:myusername/myprojectname && git push -u origin master
